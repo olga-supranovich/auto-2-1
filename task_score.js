@@ -8,5 +8,5 @@ let studentName = "Olga";
 let studentSurname = "Supranovich";
 
 console.log(
-  `Средний балл по каждому модулю для студента ${studentName} ${studentSurname}: ${averageScore}`
+  `Средний балл по каждому модулю для студента ${studentName.slice(0,1)}. ${studentSurname}: ${averageScore}`
 );
