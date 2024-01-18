@@ -11,11 +11,11 @@ console.log(
   `Средний балл по каждому модулю для студента ${studentName.slice(0,1)}. ${studentSurname}: ${averageScore}`
 );
 
-function increment() {
+function increment(x) {
   return ++x;
 }
 
-function decrement() {
+function decrement(x) {
   return --x;
 }
 
@@ -23,10 +23,6 @@ let x = 10;
 
 console.log(`Original value x = ${x}`);
 
-let y = increment();
+console.log(`Increment x = ${increment(x)}`);
 
-console.log(`Incremented value x++ = ${y}`);
-
-y = decrement();
-
-console.log(`Decremented value x-- = ${y}`);
+console.log(`Decrement x = ${decrement(x)}`);
