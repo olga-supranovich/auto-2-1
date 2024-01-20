@@ -9,11 +9,11 @@ const players = [
   {
     id: 2,
     name: "Petr",
-    scorePoints: 3600,
+    scorePoints: 4500,
   },
   {
     id: 3,
-    name: "Vadim",
+    name: "Petr",
     scorePoints: 3433,
   },
   {
@@ -29,12 +29,20 @@ for (index in players) {
 
 let maxScore = Math.max(...arrScorePoints);
 
-let maxScoreName=""
+let setMaxScoreName = new Set();
 
 for (let i = 0; i < arrScorePoints.length; i++) {
   if (players[i].scorePoints === maxScore) {
-    maxScoreName = players[i].name;
+    setMaxScoreName.add(players[i].name);
   }
 }
 
-console.log(`Player with max score points ${maxScore} is ${maxScoreName}`);
+if (setMaxScoreName.size === 1) {
+  console.log(`Player with max score points ${maxScore} is setMaxScoreName}`);
+} else {
+  console.log(
+    `Players with max score points ${maxScore} are ${Array.from(
+      setMaxScoreName
+    ).join(", ")}`
+  );
+}
