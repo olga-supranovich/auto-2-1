@@ -33,7 +33,7 @@ for (index in players) {
     arrScorePoints.push(players[index].scorePoints);
   }
 }
-console.log(arrScorePoints);
+
 
 let maxScore = Math.max(...arrScorePoints);
 
