@@ -26,7 +26,21 @@ function calculateSum(arr) {
   return sum;
 }
 
-let expectedResult = [40590, 148200, 25709];
+function getMonthsBelowLimit(arr) {
+  let arrMonthbelowLimit = []; //массив с индексами месяцев, в которых затраты <= 1000
+
+  arr.forEach((value, index) => {
+    if (value <= 1000) {
+      let month = new Date(2024, index).toLocaleString("en-En", {
+        month: "long",
+      });
+      arrMonthbelowLimit.push(month);
+    }
+  });
+  return arrMonthbelowLimit;
+}
+
+let expectedResult = [40591, 148200, 25709];
 
 function testCalculateSum() {
   expencesExamples.forEach((value, index) => {
@@ -45,4 +59,18 @@ function testCalculateSum() {
   });
 }
 
+function printMonthsBelowLimit() {
+  expencesExamples.forEach((value, index) => {
+    console.log(
+      `Test ${
+        index + 1
+      }: Months with expenses below limit are ${getMonthsBelowLimit(
+        value.yearlyExpences
+      )}`
+    );
+  });
+}
+
 testCalculateSum();
+
+printMonthsBelowLimit();
